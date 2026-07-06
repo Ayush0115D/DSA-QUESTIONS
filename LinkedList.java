@@ -1,5 +1,9 @@
 class LinkedList {
     Node head;
+    private int size;
+    LinkedList(){
+    this.size=0;
+    }
 class Node {
     String data;
     Node next;
@@ -7,10 +11,9 @@ class Node {
     Node(String data) {
         this.data = data;
         this.next = null;
+        size++; 
     }
-}
-
-
+} //Major 4 operations in linked list- add,delete,print,size
     // add - first, last
     public void addFirst(String data) {
         Node newNode = new Node(data);
@@ -55,6 +58,7 @@ class Node {
             System.out.println("List is empty");
             return;
         }
+        size--;
         head = head.next;
     }
     //delete last
@@ -63,6 +67,7 @@ class Node {
             System.out.println("List is empty");
             return;
         }
+        size--;
         if(head.next == null) {
             head = null;
             return;
@@ -75,7 +80,10 @@ class Node {
         }
         secondLast.next = null;
     }  
-
+//size
+    public int getSize() {
+        return size;
+    }
     public static void main(String args[]) {
         LinkedList list = new LinkedList();
         list.addFirst("a");
@@ -89,5 +97,7 @@ class Node {
         list.printList();
         list.deleteLast();
         list.printList();
+
+        System.out.println("Size of the list: " +  list.getSize());
     }
 }
