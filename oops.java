@@ -1,4 +1,4 @@
-class Pen{
+ class Pen{
     String color;
     String type;
 
@@ -13,7 +13,6 @@ class Pen{
 class Student{
     String name;
     int age;
-    
 
     public void printInfo() {
         System.out.println("Name: " + this.name);
@@ -29,6 +28,22 @@ class Student{
    Student(){ //copy constructor
 
     }
+//polymorphism is the ability of an object to take on many forms. 
+// The most common use of polymorphism in OOPs is when a parent class reference is used to refer to a child class object.
+//Compile time polymorphism is also known as static polymorphism. 
+// It is achieved by method overloading and operator overloading. 
+// In method overloading, multiple methods have the same name but different parameters.
+// The method to be called is determined at compile time based on the method signature.
+public void printInfo(String age){
+    System.out.println("Age: " + age);
+}
+public void printInfo(int age){
+    System.out.println("Age: " + age);
+}
+public void printInfo(String name, int age){
+    System.out.println("Name: " + name + " Age: " + age);
+   
+}
 }
 public class oops {
     public static void main(String args[]) {    
@@ -49,4 +64,5 @@ public class oops {
 
         Student s2 = new Student(s1); //copy constructor
         s2.printInfo();
+        s1.printInfo(s1.name,s1.age);
      }}
